@@ -5,7 +5,7 @@ import { ShowRepo } from "../../components";
 
 const RepoPage = () => {
   const { full_name, repo_name } = useParams();
-  const [showData, setShowData] = useState();
+  const [showData, setShowData] = useState([]);
 
   useEffect(() => {
     async function getShowData(full_name, repo_name) {
@@ -19,13 +19,13 @@ const RepoPage = () => {
       }
     }
     getShowData(full_name, repo_name);
-  }, [full_name]);
+  }, []);
 
   return (
     <ShowRepo
       name={repo_name}
-      // forkCount={showData.fork_count}
-      summary="hello"
+      forkCount={showData.forks_count}
+      description={showData.description}
     />
   );
 };
