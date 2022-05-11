@@ -1,0 +1,11 @@
+nav a {
+  padding: 1rem;
+}
+
+nav .active {
+  font-weight: bold;
+}
+
+.show-link {
+  cursor: pointer;
+}
