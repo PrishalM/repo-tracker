@@ -11,10 +11,8 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/">
-          <Route path="/" element={<SearchPage />} />
-          <Route path=":full_name" element={<RepoPage />} />
-        </Route>
+        <Route path="/" element={<SearchPage />} />
+        <Route path=":full_name/:repo_name" element={<RepoPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -4,28 +4,28 @@ import { useParams } from "react-router-dom";
 import { ShowRepo } from "../../components";
 
 const RepoPage = () => {
-  const { full_name } = useParams();
-  console.log(full_name);
+  const { full_name, repo_name } = useParams();
   const [showData, setShowData] = useState();
 
   useEffect(() => {
-    async function getShowData(full_name) {
+    async function getShowData(full_name, repo_name) {
       try {
         const result = await axios.get(
-          `https://api.github.com/repos/${full_name}`
+          `https://api.github.com/repos/${full_name}/${repo_name}`
         );
         setShowData(result.data);
       } catch (err) {
         console.error(err);
       }
     }
-    getShowData(full_name);
+    getShowData(full_name, repo_name);
   }, [full_name]);
+
   return (
     <ShowRepo
-      full_name={showData.name}
-      summary={showData.summary}
-      image={showData.image}
+      name={repo_name}
+      // forkCount={showData.fork_count}
+      summary="hello"
     />
   );
 };
