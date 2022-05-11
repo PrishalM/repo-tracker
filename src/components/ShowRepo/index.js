@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ShowRepo = ({ name, forkCount, description, repoUrl }) => {
   return (
