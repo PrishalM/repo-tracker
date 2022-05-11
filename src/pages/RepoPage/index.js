@@ -4,25 +4,26 @@ import { useParams } from "react-router-dom";
 import { ShowRepo } from "../../components";
 
 const RepoPage = () => {
-  const { name } = useParams();
-  const [showData, setShowData] = useState({ rating: {}, image: {} });
+  const { full_name } = useParams();
+  console.log(full_name);
+  const [showData, setShowData] = useState();
 
   useEffect(() => {
-    async function getShowData(name) {
+    async function getShowData(full_name) {
       try {
         const result = await axios.get(
-          `https://api.tvmaze.com/singlesearch/shows?q=${name}`
+          `https://api.github.com/repos/${full_name}`
         );
         setShowData(result.data);
       } catch (err) {
         console.error(err);
       }
     }
-    getShowData(name);
-  }, [name]);
+    getShowData(full_name);
+  }, [full_name]);
   return (
     <ShowRepo
-      name={showData.name}
+      full_name={showData.name}
       summary={showData.summary}
       image={showData.image}
     />

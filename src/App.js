@@ -13,7 +13,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route path="/">
           <Route path="/" element={<SearchPage />} />
-          <Route path=":name" element={<RepoPage />} />
+          <Route path=":full_name" element={<RepoPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>

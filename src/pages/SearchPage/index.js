@@ -28,7 +28,7 @@ const SearchPage = () => {
         className="show-link"
         key={i}
         onClick={() => {
-          navigate(`/search/${s.full_name}`);
+          navigate(`/${s.full_name}`);
         }}
       >
         {s.name}
