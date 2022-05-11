@@ -4,7 +4,7 @@ import axios from "axios";
 
 const SearchPage = () => {
   const [inputValue, setInputValue] = useState("");
-  const [submitValue, setSubmitValue] = useState("PrishalM");
+  const [submitValue, setSubmitValue] = useState("");
   const [showData, setShowData] = useState([]);
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const SearchPage = () => {
   function renderShows() {
     return showData.map((s, i) => (
       <li
-        className="show-link"
+        className="show-repo"
         key={i}
         onClick={() => {
           navigate(`/${s.full_name}`);
@@ -49,15 +49,15 @@ const SearchPage = () => {
 
   return (
     <>
-      <h1>Search</h1>
+      <h2>Search for a GitHub User</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search GitHub name here"
+          placeholder="Search here"
           onChange={handleInput}
           value={inputValue}
         ></input>
-        <button type="submit">Sumbit</button>
+        <button type="submit">Search</button>
       </form>
       <ol>{renderShows()}</ol>
     </>

@@ -26,6 +26,7 @@ const RepoPage = () => {
       name={repo_name}
       forkCount={showData.forks_count}
       description={showData.description}
+      repoUrl={showData.html_url}
     />
   );
 };

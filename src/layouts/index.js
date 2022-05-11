@@ -19,7 +19,13 @@ const Layout = () => {
         </nav>
       </header>
       <Outlet />
-      <footer>Footer items</footer>
+      <footer>
+        <p>© 2022 Repo Tracker. </p>
+        <p>
+          &nbsp; Created by <a href="https://github.com/iAmash412">Aafthab</a>{" "}
+          &amp; <a href="https://github.com/PrishalM">Prishal</a>
+        </p>
+      </footer>
     </>
   );
 };
