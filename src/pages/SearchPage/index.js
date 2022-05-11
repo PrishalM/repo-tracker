@@ -4,7 +4,7 @@ import axios from "axios";
 
 const SearchPage = () => {
   const [inputValue, setInputValue] = useState("");
-  const [submitValue, setSubmitValue] = useState("Hannibal");
+  const [submitValue, setSubmitValue] = useState("PrishalM");
   const [showData, setShowData] = useState([]);
   const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ const SearchPage = () => {
     async function searchApi(searchString) {
       try {
         const result = await axios.get(
-          `https://api.tvmaze.com/search/shows?q=${searchString}`
+          `https://api.github.com/users/${searchString}/repos`
         );
         setShowData(result.data);
       } catch (err) {
@@ -28,10 +28,10 @@ const SearchPage = () => {
         className="show-link"
         key={i}
         onClick={() => {
-          navigate(`/search/${s.show.name}`);
+          navigate(`/search/${s.full_name}`);
         }}
       >
-        {s.show.name}
+        {s.name}
       </li>
     ));
   }
@@ -53,7 +53,7 @@ const SearchPage = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search here"
+          placeholder="Search GitHub name here"
           onChange={handleInput}
           value={inputValue}
         ></input>

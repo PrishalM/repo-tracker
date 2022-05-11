@@ -15,7 +15,7 @@ const Layout = () => {
         <h1>Repo tracker</h1>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink onClick={handleBackBtn}>Back</NavLink>
+          <a onClick={handleBackBtn}>Back</a>
         </nav>
       </header>
       <Outlet />
